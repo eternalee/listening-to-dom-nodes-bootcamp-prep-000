@@ -46,11 +46,13 @@
       main.addEventListener('click', function(event) {
         alert('I was clicked!')
       }
+      
       input.addEventListener('keydown', function(e)
         {
           console.log(e.which)
         }
       )
+      
       function bubble(e) {
         console.log(this.firstChild.nodeValue.trim() + ' bubbled')
         
@@ -59,6 +61,13 @@
         }
       }
       
+      function capture(e) {
+        console.log(this.firstChild.nodeValue.trim() + ' captured') 
+      }
+      
+      for (let i=0; i<divs.length; i++) {
+        divs[i].addEventListener('click',capture,true)
+      }
     </script>
   </body>
 </html>
